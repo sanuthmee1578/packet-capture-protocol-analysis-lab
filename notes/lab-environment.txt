@@ -1,0 +1,18 @@
+Packet Capture & Protocol Analysis Lab
+
+Lab Environment:
+- Attacker machine: Kali Linux
+- Target machine: Metasploitable 2
+- Network mode: Host-only isolated lab network
+- Tools: tcpdump, tshark, Wireshark, ping, curl, nmap
+- Purpose: Capture and analyze network traffic generated inside an authorized local lab.
+
+Traffic types analyzed:
+- ICMP
+- DNS
+- HTTP
+- FTP/Telnet plaintext risk
+- Nmap scan traffic
+
+Security note:
+All traffic was generated in a local lab environment only. No unauthorized systems were scanned or captured.

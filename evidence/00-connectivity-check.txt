@@ -1,0 +1,17 @@
+Packet Capture Lab - Connectivity Check
+
+Kali network interfaces:
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             192.168.153.128/24 fe80::4924:1447:2757:5133/64 
+eth1             UP             192.168.109.128/24 fe80::812a:f24d:b76e:1cc5/64 
+
+Ping test to Metasploitable:
+PING 192.168.153.129 (192.168.153.129) 56(84) bytes of data.
+64 bytes from 192.168.153.129: icmp_seq=1 ttl=64 time=0.339 ms
+64 bytes from 192.168.153.129: icmp_seq=2 ttl=64 time=0.455 ms
+64 bytes from 192.168.153.129: icmp_seq=3 ttl=64 time=0.691 ms
+64 bytes from 192.168.153.129: icmp_seq=4 ttl=64 time=0.512 ms
+
+--- 192.168.153.129 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3064ms
+rtt min/avg/max/mdev = 0.339/0.499/0.691/0.127 ms

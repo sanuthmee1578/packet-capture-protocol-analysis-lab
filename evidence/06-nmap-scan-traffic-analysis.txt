@@ -1,0 +1,46 @@
+Nmap Scan Traffic Analysis
+
+Capture file:
+-rw-r--r-- 1 tcpdump tcpdump 1.2K Jul 29 05:15 captures/06-nmap-scan-traffic.pcap
+
+Nmap scan target:
+192.168.153.129
+
+Ports scanned:
+21, 22, 23, 80
+
+TShark packet summary:
+    1   0.000000 VMware_31:43:e6 → Broadcast    ARP 42 Who has 192.168.153.129? Tell 192.168.153.128
+    2   0.000709 VMware_0b:19:1e → VMware_31:43:e6 ARP 60 192.168.153.129 is at 00:0c:29:0b:19:1e
+    3   2.581869 192.168.153.128 → 192.168.153.129 TCP 58 57536 → 22 [SYN] Seq=0 Win=1024 Len=0 MSS=1460
+    4   2.581970 192.168.153.128 → 192.168.153.129 TCP 58 57536 → 80 [SYN] Seq=0 Win=1024 Len=0 MSS=1460
+    5   2.581987 192.168.153.128 → 192.168.153.129 TCP 58 57536 → 23 [SYN] Seq=0 Win=1024 Len=0 MSS=1460
+    6   2.582016 192.168.153.128 → 192.168.153.129 TCP 58 57536 → 21 [SYN] Seq=0 Win=1024 Len=0 MSS=1460
+    7   2.584270 192.168.153.129 → 192.168.153.128 TCP 60 22 → 57536 [SYN, ACK] Seq=0 Ack=1 Win=5840 Len=0 MSS=1460
+    8   2.584271 192.168.153.129 → 192.168.153.128 TCP 60 80 → 57536 [SYN, ACK] Seq=0 Ack=1 Win=5840 Len=0 MSS=1460
+    9   2.584272 192.168.153.129 → 192.168.153.128 TCP 60 23 → 57536 [SYN, ACK] Seq=0 Ack=1 Win=5840 Len=0 MSS=1460
+   10   2.584273 192.168.153.129 → 192.168.153.128 TCP 60 21 → 57536 [SYN, ACK] Seq=0 Ack=1 Win=5840 Len=0 MSS=1460
+   11   2.586331 192.168.153.128 → 192.168.153.129 TCP 54 57536 → 22 [RST] Seq=1 Win=0 Len=0
+   12   2.586381 192.168.153.128 → 192.168.153.129 TCP 54 57536 → 80 [RST] Seq=1 Win=0 Len=0
+   13   2.586434 192.168.153.128 → 192.168.153.129 TCP 54 57536 → 23 [RST] Seq=1 Win=0 Len=0
+   14   2.586448 192.168.153.128 → 192.168.153.129 TCP 54 57536 → 21 [RST] Seq=1 Win=0 Len=0
+   15   7.575371 VMware_0b:19:1e → VMware_31:43:e6 ARP 60 Who has 192.168.153.128? Tell 192.168.153.129
+   16   7.575389 VMware_31:43:e6 → VMware_0b:19:1e ARP 42 192.168.153.128 is at 00:0c:29:31:43:e6
+
+TCP SYN packets:
+3	192.168.153.128	192.168.153.129	57536	22
+4	192.168.153.128	192.168.153.129	57536	80
+5	192.168.153.128	192.168.153.129	57536	23
+6	192.168.153.128	192.168.153.129	57536	21
+
+SYN/ACK responses:
+7	192.168.153.129	192.168.153.128	22	57536
+8	192.168.153.129	192.168.153.128	80	57536
+9	192.168.153.129	192.168.153.128	23	57536
+10	192.168.153.129	192.168.153.128	21	57536
+
+Learning note:
+Nmap scan traffic can be identified by connection attempts to multiple ports. SYN scans send TCP SYN packets to check whether target ports are open.
+
+Security recommendation:
+Network defenders can monitor for repeated connection attempts across multiple ports as possible port scanning behavior.

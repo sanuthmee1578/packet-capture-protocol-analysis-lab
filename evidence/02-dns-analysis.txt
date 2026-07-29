@@ -1,0 +1,25 @@
+DNS Packet Capture Analysis
+
+Capture file:
+-rw-r--r-- 1 tcpdump tcpdump 406 Jul 29 04:43 captures/02-dns-traffic.pcap
+
+TShark packet summary:
+    1   0.000000 192.168.153.128 → 192.168.153.129 DNS 71 Standard query 0x876c A example.com
+    2   0.021152 192.168.153.129 → 192.168.153.128 DNS 71 Standard query response 0x876c Server failure A example.com
+    3  31.902575 192.168.153.128 → 192.168.153.129 DNS 94 Standard query 0x1a65 A example.com OPT
+    4  31.903834 192.168.153.129 → 192.168.153.128 DNS 82 Standard query response 0x1a65 Server failure A example.com OPT
+
+DNS filtered output:
+    1   0.000000 192.168.153.128 → 192.168.153.129 DNS 71 Standard query 0x876c A example.com
+    2   0.021152 192.168.153.129 → 192.168.153.128 DNS 71 Standard query response 0x876c Server failure A example.com
+    3  31.902575 192.168.153.128 → 192.168.153.129 DNS 94 Standard query 0x1a65 A example.com OPT
+    4  31.903834 192.168.153.129 → 192.168.153.128 DNS 82 Standard query response 0x1a65 Server failure A example.com OPT
+
+DNS query fields:
+1	192.168.153.128	192.168.153.129	example.com	False
+2	192.168.153.129	192.168.153.128	example.com	True
+3	192.168.153.128	192.168.153.129	example.com	False
+4	192.168.153.129	192.168.153.128	example.com	True
+
+Learning note:
+DNS traffic shows how domain names are queried and resolved. DNS queries can reveal what domains a system is trying to access unless encrypted DNS is used.
