@@ -12,6 +12,7 @@ All traffic was generated inside a local authorized lab environment only.
 
 ---
 
+
 ## Lab Objectives
 
 The objectives of this lab were to:
