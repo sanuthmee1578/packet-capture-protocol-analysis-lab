@@ -11,7 +11,6 @@ The main purpose of this project is to understand how different protocols appear
 All traffic was generated inside a local authorized lab environment only.
 
 ---
-
 ## Lab Objectives
 
 The objectives of this lab were to:
